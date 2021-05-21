@@ -54,7 +54,11 @@ function strip(bandName) {
 }
 
 
-const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);  
+//  -1, 0, and 1 in a comparison function are used to tell the caller how the first value 
+//  should be sorted in relation to the second one. 
+//  -1 means the first goes before the second, 1 means it goes after, and 0 means they're equivalent.
+
 // const sortedBands = bands.sort(function (a, b){
     // if(strip(a) > strip(b))  {
     //     return 1;   
@@ -67,8 +71,6 @@ document.querySelector('#bands').innerHTML =
     sortedBands
         .map(band => `<li>${band}</li>`)
         .join('');  //.join takes off the commas, like: We Came as Romans, Counterparts, --> We Came as Romans Counterparts 
-
-
 </script>
 
 </body>
